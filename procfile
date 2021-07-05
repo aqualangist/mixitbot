@@ -1,1 +1,1 @@
-worker: python mixitbot.py
+web: python mixitbot.py
