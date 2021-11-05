@@ -27,15 +27,14 @@ def bot_message(message):
         if message.text == "Канал MIX_IT_YOURSELF":
             bot.send_message(message.chat.id, "Присоединяйся! https://t.me/mix_music_tips")
         elif message.text == "Скачать":
-            keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-#            button_download_master = types.KeyboardButton(text="The Mastering Blueprint")
-#            button_download_mix = types.KeyboardButton(text="The Mixing Blueprint")
-#            button_download_compression = types.KeyboardButton(text="Ultimate Guide To Compression")
-            button_download_kick_tune = types.KeyboardButton(text="Тюнинг бочки в FLStudio")
-            button_download_eq_drums = types.KeyboardButton(text="Базовая эквализация ударных")
+            keyboard = types.ReplyKeyboardMarkup(resize_keyboard=False)
+            button_download_manual = types.KeyboardButton(text="Мануалы")
+            button_download_instr = types.KeyboardButton(text="Инструменты")
+            button_download_effect = types.KeyboardButton(text="Эффекты")
+            button_download_pack = types.KeyboardButton(text="Паки")
             back = types.KeyboardButton(text="Назад")
 
-            keyboard.add(button_download_kick_tune, button_download_eq_drums, back)
+            keyboard.add(button_download_manual, button_download_instr,button_download_effect, button_download_pack, back)
 
             bot.send_message(message.chat.id, "Выбери продукт в меню", reply_markup=keyboard)
 
@@ -49,15 +48,15 @@ def bot_message(message):
 
             bot.send_message(message.chat.id, "Главное меню", reply_markup=keyboard)
 
-        elif message.text == "The Mastering Blueprint":
-            bot.send_message(message.chat.id, "Ссылка на скачивание: https://yadi.sk/i/31Eq1pAFTCGnPg")
-        elif message.text == "The Mixing Blueprint":
-            bot.send_message(message.chat.id, "Ссылка на скачивание: https://yadi.sk/i/pHu0bBC_rHk6iA")
-        elif message.text == "Ultimate Guide To Compression":
-            bot.send_message(message.chat.id, "Ссылка на скачивание: https://yadi.sk/i/KIk3NO3rtRfROQ")
-        elif message.text == "Тюнинг бочки в FLStudio":
-            bot.send_message(message.chat.id, "Ссылка на скачивание: https://yadi.sk/i/2v0HcKZDUoX61A")
-        elif message.text == "Базовая эквализация ударных":
-            bot.send_message(message.chat.id, "Ссылка на скачивание: https://yadi.sk/i/3AOQ6uNoNSqong")
+        elif message.text == "Мануалы":
+            bot.send_message(message.chat.id, "Ссылка на папку с мануалами: https://yadi.sk/d/6ct4ntzyVV_9DQ")
+        elif message.text == "Инструменты":
+            bot.send_message(message.chat.id, "Ссылка на папку с VST-инструментами: https://yadi.sk/d/MQ9KyV1fahXjWQ")
+        elif message.text == "Эффекты":
+            bot.send_message(message.chat.id, "Ссылка на папку с VST-эффектами: https://yadi.sk/d/d0WBy9JvPNpaHQ")
+        elif message.text == "Паки":
+            bot.send_message(message.chat.id, "Ссылка на папку с драм и миди-паками: https://yadi.sk/d/eC6dVRwv0sx_eA")
+
+
 
 bot.polling(none_stop=True)
