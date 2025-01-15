@@ -28,6 +28,7 @@ def bot_message(message):
             bot.send_message(message.chat.id, "Присоединяйся! https://t.me/mix_music_tips")
         elif message.text == "Скачать":
             keyboard = types.ReplyKeyboardMarkup(resize_keyboard=False)
+            button_download_fl_studio = types.KeyboardButton(text="FLStudio")
             button_download_manual = types.KeyboardButton(text="Мануалы")
             button_download_instr = types.KeyboardButton(text="Инструменты")
             button_download_effect = types.KeyboardButton(text="Эффекты")
@@ -48,6 +49,8 @@ def bot_message(message):
 
             bot.send_message(message.chat.id, "Главное меню", reply_markup=keyboard)
 
+        elif message.text == "FLStudio":
+            bot.send_message(message.chat.id, "Ссылка на папку с FLStudio: https://disk.yandex.ru/d/W6Sc4jj1KJ9G2w")
         elif message.text == "Мануалы":
             bot.send_message(message.chat.id, "Ссылка на папку с мануалами: https://yadi.sk/d/6ct4ntzyVV_9DQ")
         elif message.text == "Инструменты":
@@ -56,7 +59,6 @@ def bot_message(message):
             bot.send_message(message.chat.id, "Ссылка на папку с VST-эффектами: https://yadi.sk/d/d0WBy9JvPNpaHQ")
         elif message.text == "Паки":
             bot.send_message(message.chat.id, "Ссылка на папку с драм и миди-паками: https://yadi.sk/d/eC6dVRwv0sx_eA")
-
 
 
 bot.polling(none_stop=True)
